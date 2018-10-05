@@ -1,0 +1,161 @@
+
+
+#in List values are indexed by numbers but in dictionary values are indexed by keys
+
+#in python ,a dictionary is sequence of key-value . separeted by commas. and Curly by {braces}
+#consider the following exemple .
+
+ports= {} #created empty dictionary .
+ports = {22:"ssh",23:"Telnet",53:"dns",80:"http",443:"https","poer":"PO"}
+
+
+
+
+print(" ------------------ Companies ---------------- ")
+companies = {"IBM":"Internationnal Business Machines","L&T":"Larsen & Toubro"}
+for key in companies.keys():
+    print(str(key) + " : " + companies.get(key))
+
+
+
+#----- Key rules
+print("\n\n---- <Key Rules> ---- ")
+print("* the key of dictionary can not be changed")
+print("* the keys are Unique !!")
+print("* String,int,float,can be used as key.")
+print("* Values can be anything, for exemple list,string,int,float,and so on.")
+print("value can be changed and repeated.")
+print("---- </Key Rules> ---- \n\n")
+
+#---------- Accessing the values of dictionary
+print("\n\n----- <Accessing Values> ----- ")
+for key in ports.keys():
+    print("port "+str(key) + " : " + ports.get(key) )
+
+print(ports[22])
+print("----- </Accessing Values> ----- \n\n")
+#---------- Deleting item from dictionary OR all the dictionary itself
+
+print("\n\n----- <Deleting Items> ----- ")
+print("All values " + str(ports))
+print("Deleting port 22 'del ports[22]'.... ")
+del ports[22]
+print("Result ... "+str(ports))
+#del ports delete all the dictionary
+
+print("----- </Deleting Items> ----- \n\n")
+
+
+print("\n\n----- <Updating Items values> -----")
+print("All values " + str(ports))
+ports[443]= "HTTPS"
+print("updating 443 value ... ")
+print("Result ... "+str(ports))
+print("----- </Updating Items Values> -----\n\n")
+
+
+
+
+print("\n\n----- <Adding items> -----")
+ports[3306] = "Mysql"
+print("Result ... "+str(ports))
+print("----- </Adding items> -----\n\n")
+
+
+
+
+print("\n\n----- <Dictionary Functions dict() > -----")
+
+# You can pass a list or tuple to Dictionary by using DIC() function
+#but that tuple or list contain element as pairs of values like this exemple
+
+port =[[21,"FTP"],[22,"ssh"],[23,"Telnet"]]
+
+dicPort = dict(port)
+print(type(dicPort))
+print(dicPort)
+print("----- </Dictionary Functions> -----\n\n")
+
+
+
+print("\n\n----- <Dictionary Methods Copy> -----")
+
+print("# Supose we want a copy of a dictionary !(not assignment ) ")
+
+dicPort_copy = dicPort.copy()
+print(dicPort_copy)
+
+print("original : " + str(id(dicPort)))
+print("copy : " + str(id(dicPort_copy)))
+
+print("\n# Assignment point to the same memory addres")
+dictPortAssignment = dicPort
+dicPort[25]="smtp"
+print(dictPortAssignment)
+
+print("\n\nMemory Adress for both original and assignment variable ")
+print("original : " + str(id(dicPort)))
+print("Assignment : " + str(id(dictPortAssignment)))
+
+print("------ <\Dictionary Methods Copy> -----\n\n")
+
+
+
+print("\n\n----- <Dictionary Methods get() and setDefault() > -----")
+# dic.get(key,default=None)
+
+
+print("""
+#set default message in case we can't found the key dict.setDefault(key,"message")
+#if the key is in the dictionary you will get the value of key
+#if the key is not in the dictionary . --> the key and the message gonna be inserted in dictionary
+""")
+#exemple
+print(dicPort.get(22,"can't found item ! "))
+print(dicPort.get(222,"can't found item ! "))
+
+
+print("dictionary before setDefault " + str(dicPort))
+dicPort.setdefault(99999,"key not found ")
+print(dicPort)
+print("----- </Dictionary Methods get() and  setDefault()> -----\n\n")
+
+
+
+print("\n\n----- <Dictionary Methods has_Key() > -----")
+print("dict.has_key(myKey) return True if key if myKey exist . if not it return False")
+
+print("----- </Dictionary Methods has_Key() > -----\n\n")
+
+print("\n\n----- <Dictionary Methods Keys() > -----")
+print("to get all keys of dictionary use method dict.keys() ")
+print("----- </Dictionary Methods Keys() > -----\n\n")
+
+
+print("\n\n----- <Dictionary Methods values() > -----")
+print("to get all values of dictionary use method dict.values() ")
+print("----- </Dictionary Methods values() > -----\n\n")
+
+
+print("\n\n----- <Dictionary Methods update() > -----")
+print("to add all items of dict1 to dict2 we use upddate() method  ")
+print("exe : dict2.update(dict1)")
+print("----- </Dictionary Methods update() > -----\n\n")
+
+print("\n\n----- <Dictionary Methods items() > -----")
+print("return list of all items of dictionary [(key,value),(key,value)]")
+print("----- </Dictionary Methods items() > -----\n\n")
+
+
+
+print("\n\n----- <Dictionary Methods clear() > -----")
+print("to clear all the dictionary use dict.clear() ")
+print("----- </Dictionary Methods clear() > -----\n\n")
+
+
+
+
+
+
+
+print(help(ports))
