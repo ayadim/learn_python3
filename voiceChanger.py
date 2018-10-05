@@ -1,6 +1,6 @@
 #calling package in another path its possible using 2 lines
 import sys
-sys.path.append("/media/root/divers1/Learning/Programing/python/projects/learnPythonFromScrutch/start/chapter8/")
+sys.path.append("./chapter8/")
 # we added the new path for python to look for our package
 
 
